@@ -39,10 +39,31 @@
 1. Remove ~/.aws because whenever you will go back to your instance after stopping the Instances, data gets corrupted and you would need to start fresh
 2. Configure your AWS with the credenitals in your AWS Acdemy Credentials
 3. Edit the credentials file and copy and paste credentials from AWS CLI
-4. Test it and you should be able to connect
+4. Test it and you should be able to connect.
+5. Do this in both instances
   ```bash
     rm -rf ~/.aws
     aws configure
     nano ~/.aws/credentials
     aws s3 ls s3://njit-cs-643
-## 
+```
+
+
+# Setting and Running Python Codes
+1. Make a Directory to store codes and go to that Directory
+2. Make your python virtual enviroment and activate it 
+3. Make your Python File(s)
+4.  Run your Python File
+5. Access text file
+```bash
+mkdir Project1
+cd Project1
+python3 -m venv venv
+source venv/bin/activate
+nano car_detection.py # Make this only in your Car Detection EC2 Instance
+nano text_detection.py # Make this only in your Text Detection EC2 Instance
+python car_detection.py
+python text_detection.py
+cat detected_text_results.txt
+
+
