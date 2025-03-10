@@ -61,6 +61,10 @@ This was programmed in python with the files
 1. To Stop the Instances, you can go to the Instance state for the specific instance and Press Stop Instances
 2. End Lab in AWS Academy Learning Lab does stop and turn off the instances automatically.
 
+## Create SQS Queue
+1. Go to SQS and click Create queue
+2. Set up a Standard queue and give it a name
+3. Keep everything else the same and click create and this will give you your queue url
 
 
 # Setting and Running Python Codes
