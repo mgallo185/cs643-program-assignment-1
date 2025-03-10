@@ -1,8 +1,9 @@
 # Programming Assignment 1
 
 
-## Setting up EC2 Instances
+# Setting up EC2 Instances
 
+## Set up on AWS Console
 1. Login and go to AWS Academy Learner Lab and click on Start Lab
 2. Wait for AWS to load (when the small circle turns green) and click on AWS to access AWS Console
 3. On AWS Console search and click on the EC2 service in the All Services Menu
@@ -44,3 +45,4 @@
     aws configure
     nano ~/.aws/credentials
     aws s3 ls s3://njit-cs-643
+## 
