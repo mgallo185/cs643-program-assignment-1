@@ -80,8 +80,8 @@ python3 -m venv venv
 source venv/bin/activate
 nano car_detection.py # Make this only in your Car Detection EC2 Instance
 nano text_detection.py # Make this only in your Text Detection EC2 Instance
-python car_detection.py
-python text_detection.py
-cat detected_text_results.txt
+python text_detection.py # this is in your Text Detection EC2 Instance Run this first
+python car_detection.py # This is in your Car Detection EC2 Instance Run this after running text_detection
+cat detected_text_results.txt # this is in your Text Detection Instance and this displays the results
 
 
