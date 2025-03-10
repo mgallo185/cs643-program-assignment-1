@@ -57,6 +57,10 @@ This was programmed in python with the files
     nano ~/.aws/credentials
     aws s3 ls s3://njit-cs-643
 ```
+## Stopping Instances
+1. To Stop the Instances, you can go to the Instance state for the specific instance and Press Stop Instances
+2. End Lab in AWS Academy Learning Lab does stop and turn off the instances automatically.
+
 
 
 # Setting and Running Python Codes
