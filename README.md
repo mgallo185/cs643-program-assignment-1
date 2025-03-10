@@ -1,5 +1,15 @@
-# Programming Assignment 1
+# Programming Assignment 1: AWS Image Recognition Pipeline
 
+This project is an introduction to developing an AWS Application. Here we made an image recognition system in AWS with 2 EC2 Instances with S3,SQS, and Rekognition. One EC2 Instance detects Cars from a set of Images from a S3 Bucket (EC2 A) . Another EC2 Instance detects text from that same set of images from the same S3 Bucket (EC2 B). EC2 A stores indees of the images with cars in them and sends them in an SQS Queue. EC2 B Retrieves the indexes of images and then will make a text file that features the indexes of images that contain cars and text and prints the actual text from these images. The figure below describes the system:
+
+![fig1](https://github.com/user-attachments/assets/169563fd-f49c-4810-b3ad-c3393cffbdb1)
+
+Your have to create 2 EC2 instances (EC2 A and B in the figure), with Amazon Linux AMI, that will work in parallel. Each instance will run a Java or any other programming language application. Instance A will read 10 images from an S3 bucket that we created (https://njit-cs-643.s3.us-east-1.amazonaws.com) and perform object detection in the images. When a car is detected using Rekognition, with confidence higher than 90%, the index of that image (e.g., 2.jpg) is stored in SQS. Instance B reads indexes of images from SQS as soon as these indexes become available in the queue, and performs text recognition on these images (i.e., downloads them from S3 one by one and uses Rekognition for text recognition). Note that the two instances work in parallel: for example, instance A is processing image 3, while instance B is processing image 1 that was recognized as a car by instance A. When instance A terminates its image processing, it adds index -1 to the queue to signal to instance B that no more indexes will come. When instance B finishes, it prints to a file, in its associated EBS, the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index
+
+
+This was programmed in python with the files
+   - `car_detection.py` which recognizes cars from the Bucket using Rekognition and sends it to the SQS Queue and contains communication code to services
+   - `text_detection.py`  which  retrieves the indexes of images fro SQS and recognizes text from the images
 
 # Setting up EC2 Instances
 
