@@ -47,8 +47,8 @@ This was programmed in python with the files
 
 ## Configure AWS Credentials
 1. Remove ~/.aws because whenever you will go back to your instance after stopping the Instances, data gets corrupted and you would need to start fresh
-2. Configure your AWS with the credenitals in your AWS Acdemy Credentials
-3. Edit the credentials file and copy and paste credentials from AWS CLI
+2. Configure your AWS with the credenitals in your AWS Acdemy Credentials including your ID, secret ID and, the region name to us-east-1
+3. Edit the credentials file and copy and paste credentials from AWS CLI from Learner Lab
 4. Test it and you should be able to connect.
 5. Do this in both instances
   ```bash
